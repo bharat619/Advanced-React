@@ -1,7 +1,12 @@
+import CreateItem from "../components/CreateItem";
 import Link from "next/link";
 
 const Sell = () => {
-  return <div>Sell</div>;
+  return (
+    <div>
+      <CreateItem></CreateItem>
+    </div>
+  );
 };
 
 export default Sell;

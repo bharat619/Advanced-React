@@ -1,10 +1,12 @@
 import CreateItem from "../components/CreateItem";
-import Link from "next/link";
+import PleaseSignIn from "../components/PleaseSignIn";
 
 const Sell = () => {
   return (
     <div>
-      <CreateItem></CreateItem>
+      <PleaseSignIn>
+        <CreateItem />
+      </PleaseSignIn>
     </div>
   );
 };

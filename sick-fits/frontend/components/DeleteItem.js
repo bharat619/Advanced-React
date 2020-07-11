@@ -30,7 +30,7 @@ class DeleteItem extends Component {
       <Mutation
         mutation={DELETE_ITEM_MUTATION}
         variables={{ id: this.props.id }}
-        refetchQueries={[PAGINATION_QUERY]}
+        refetchQueries={[{ query: PAGINATION_QUERY }]}
         update={this.update}
       >
         {(deleteItem, { error }) => {
@@ -38,7 +38,9 @@ class DeleteItem extends Component {
             <button
               onClick={() => {
                 if (confirm("Are you sure you want to delete this item?")) {
-                  deleteItem();
+                  deleteItem().catch((e) => {
+                    alert(e.message);
+                  });
                 }
               }}
             >

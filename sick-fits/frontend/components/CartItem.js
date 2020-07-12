@@ -21,7 +21,12 @@ const CartItemStyles = styled.li`
 
 const CartItem = ({ cartItem }) => {
   if (!cartItem.item) {
-    return <CartItemStyles>This item has been removed</CartItemStyles>;
+    return (
+      <CartItemStyles>
+        This item has been removed
+        <RemoveFromCart id={cartItem.id} />
+      </CartItemStyles>
+    );
   }
   return (
     <CartItemStyles>

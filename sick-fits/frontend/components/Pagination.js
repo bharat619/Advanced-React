@@ -26,10 +26,11 @@ const Pagination = (props) => {
         const pages = Math.ceil(count / perPage);
         const page = props.page;
         return (
-          <PaginationStyles>
+          <PaginationStyles data-test="pagination">
             <Head>
               <title>
-                Sick Fits! - Page {page} of {pages}
+                Sick Fits! - Page {page} of
+                {pages}
               </title>
             </Head>
             <Link
@@ -44,7 +45,8 @@ const Pagination = (props) => {
               </a>
             </Link>
             <p>
-              Page {props.page} of {pages}
+              Page {props.page} of
+              <span className="totalPages">{pages}</span>
             </p>
 
             <Link
